@@ -6,6 +6,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 import datetime
+import time
 # import os
 
 def scrapingjobinfo():
@@ -20,9 +21,10 @@ def scrapingjobinfo():
     # 
     print()
     with MongoClient(db_url) as client:
+        mydb = client['mydb']
         for fs_li in s_li:            
             fs_li.find_element_by_tag_name('button').click()            
-            driver.switch_to.window(driver.window_handles[-1])
+            driver.switch_to_window(driver.window_handles[-1])
             html = driver.page_source
             soup = BeautifulSoup(html,'lxml')
             div = soup.select('div[class*="type_text"]')
@@ -47,5 +49,8 @@ def scrapingjobinfo():
             }
             # 
             infor = mydb.startupinfo.insert_one(data)     
+            driver.close()
+            driver.switch_to_window(driver.window_handles[0])
+            time.sleep(10)
 
 scrapingjobinfo()        
