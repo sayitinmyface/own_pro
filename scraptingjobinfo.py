@@ -58,6 +58,8 @@ def scrapingjobinfo():
                 age = td[9].string.strip()
                 content = str_content
                 # 
+                collection = mydb['startupinfo']                
+                
                 data = {
                         'post_title':post_title,
                         'organization':organization,

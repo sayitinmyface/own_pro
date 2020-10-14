@@ -6,6 +6,30 @@
     <title>Document</title>
 </head>
 <body>
-    sda
+    <table>
+        <tr>
+            <td>기관명</td>
+            <td>{{info.organization}}</td>
+            <td>기관구분</td>
+            <td>{{info.organization_sub}}</td>
+        </tr>
+        <tr>
+            <td>담당부서</td>
+            <td>{{info.department}}</td>
+            <td>연락처</td>
+            <td>{{info.contact_address}}</td>
+        </tr>
+        <tr>
+            <td>접수기간</td>
+            <td>{{info.term}}</td>
+            <td>지원분야</td>
+            <td>{{info.support}}</td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                {{info.content}}
+            </td>
+        </tr>
+    </table>
 </body>
 </html>
