@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # path('list', include('job_info.urls')),
     path('list', infoviews.jobinfolist, name='jobinfolist'),
+    path('detail/<str:title>', infoviews.jobinfodetail, name='jobinfodetail'),
 ]

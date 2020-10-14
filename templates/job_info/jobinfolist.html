@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <td>모집</td>
+            <td>기간</td>
+        </tr>
+        
+        {%for row in info%}
+            <tr>
+                <td><a href='detail/{{row.post_title}}'>{{row.post_title}}</a></td>
+                <td>{{row.term}}</td>
+            </tr>
+        {%endfor%}
+    </table>
+    
+    
+</body>
+</html>
