@@ -34,7 +34,7 @@ def scrapingjobinfo():
         # time.sleep(3)
         for fs_li in s_li:            
             # if fs_li.find_element_by_class_name('ann_list_group05').text != '시설·공간·보육':
-            screen_n = str(datetime.datetime.now())
+            
             fs_li.find_element_by_class_name('bt_Nwindow').click()                        
             driver.switch_to_window(driver.window_handles[-1])
             # 
@@ -65,7 +65,6 @@ def scrapingjobinfo():
             content = str_content
             # 
             collection = mydb['startupinfo']                
-
             data = {
                     'post_title':post_title,
                     'organization':organization,
@@ -83,6 +82,8 @@ def scrapingjobinfo():
             }
             # 
             infor = mydb.startupinfo.insert_one(data)     
+            # 
+            screen_n = str(datetime.datetime.now())
             driver.save_screenshot(f'./static/images/{screen_n}.png')
             driver.close()
             driver.switch_to_window(driver.window_handles[0])
