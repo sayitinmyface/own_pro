@@ -16,8 +16,10 @@ import time
 def scrapingjobinfo():
     db_url = 'mongodb://192.168.219.116:27017'
     url = 'https://www.k-startup.go.kr/common/announcement/announcementList.do?mid=30004&bid=701&searchAppAt=A'
+    # 
     driver = webdriver.Chrome(executable_path='./chromedriver')
     driver.get(url)
+    driver.set_window_size(2048, 1250)
     # 
     s_li = driver.find_elements(By.CSS_SELECTOR,'[id*="liArea"]')
     time = str(datetime.datetime.now())
@@ -84,7 +86,7 @@ def scrapingjobinfo():
             infor = mydb.startupinfo.insert_one(data)     
             # 
             screen_n = str(datetime.datetime.now())
-            driver.save_screenshot(f'./static/images/{screen_n}.png')
+            driver.save_screenshot(f'./static/images/{screen_n}.png')#스크린샷
             driver.close()
             driver.switch_to_window(driver.window_handles[0])
 # 
