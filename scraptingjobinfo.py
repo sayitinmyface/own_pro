@@ -16,7 +16,7 @@ import time
 def scrapingjobinfo():
     db_url = 'mongodb://192.168.219.116:27017'
     url = 'https://www.k-startup.go.kr/common/announcement/announcementList.do?mid=30004&bid=701&searchAppAt=A'
-    driver = webdriver.Chrome(executable_path='/home/hanyohan/Documents/Develop/chromedriver')
+    driver = webdriver.Chrome(executable_path='./chromedriver')
     driver.get(url)
     # 
     s_li = driver.find_elements(By.CSS_SELECTOR,'[id*="liArea"]')
