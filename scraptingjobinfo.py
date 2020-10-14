@@ -21,8 +21,7 @@ def scrapingjobinfo():
     # 
     s_li = driver.find_elements(By.CSS_SELECTOR,'[id*="liArea"]')
     time = str(datetime.datetime.now())
-    # Options.add_argument(driver.maximize_window)
-    
+    # Options.add_argument(driver.maximize_window)    
     # 
     with MongoClient(db_url) as client:
         mydb = client['mydb']
