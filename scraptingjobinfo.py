@@ -36,7 +36,6 @@ def scrapingjobinfo():
         # time.sleep(3)
         for fs_li in s_li:            
             # if fs_li.find_element_by_class_name('ann_list_group05').text != '시설·공간·보육':
-            
             fs_li.find_element_by_class_name('bt_Nwindow').click()                        
             driver.switch_to_window(driver.window_handles[-1])
             # 
